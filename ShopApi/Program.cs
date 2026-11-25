@@ -31,6 +31,8 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<ISRPO_PR4Context>();
 
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<PickupPointService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

@@ -11,7 +11,7 @@ public partial class PickupPoints
 
     public string Address { get; set; }
 
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     public virtual ICollection<Orders> Orders { get; set; } = new List<Orders>();
 }
