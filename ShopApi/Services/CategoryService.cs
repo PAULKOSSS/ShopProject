@@ -15,7 +15,7 @@ namespace ShopApi.Services
 
         public async Task<List<CategoryDtos.CategoryResponse>> GetAllCategoriesAsync()
         {
-            return await _context.Categories.Select(c => new CategoryDtos.CategoryResponse(c.Id, c.Name)).OrderBy(c => c.Name).ToListAsync();
+            return await _context.Categories.OrderBy(c => c.Name).Select(c => new CategoryDtos.CategoryResponse(c.Id, c.Name)).ToListAsync();
         }
 
         public async Task<(CategoryDtos.CategoryResponse?, string? Error)> CreateAsync(CategoryDtos.CategoryRequest request)
